@@ -1,7 +1,7 @@
 {
   "restaurants": [
   {
-    "restaurant": "Down Stairs",
+    "name": "Down Stairs",
     "address": "10111 Richmond Ave, Houston, TX 77042",
     "style": "Shitty",
     "preference": 0.5,
@@ -15,7 +15,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Taqueria Brenda's",
+    "name": "Taqueria Brenda's",
     "address": "South Gessner Road, Houston, TX",
     "style": "Tex Mex",
     "preference": 1,
@@ -29,7 +29,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Texas Hamburger Palace",
+    "name": "Texas Hamburger Palace",
     "address": "Ranchester Drive, Houston, TX",
     "style": "Burgers",
     "preference": 1,
@@ -43,7 +43,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Mayuri India Restaurant",
+    "name": "Mayuri India Restaurant",
     "address": "Westheimer Road, Houston, TX",
     "style": "Indian",
     "preference": 1,
@@ -57,7 +57,7 @@
     "Bar": false
   },
   {
-    "restaurant": "La Vina",
+    "name": "La Vina",
     "address": "Richmond Avenue, Houston, TX",
     "style": "Caribian",
     "preference": 1,
@@ -71,7 +71,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Fu Fu Café",
+    "name": "Fu Fu Café",
     "address": "Bellaire Boulevard, Houston, TX",
     "style": "Asian",
     "preference": 1,
@@ -85,7 +85,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Hobbit Café",
+    "name": "Hobbit Café",
     "address": "Richmond Avenue, Houston, TX",
     "style": "Sandwiches",
     "preference": 1,
@@ -99,7 +99,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Kaneyama Japanese Restaurant",
+    "name": "Kaneyama Japanese Restaurant",
     "address": "Westheimer Road, Houston, TX",
     "style": "Sushi",
     "preference": 1,
@@ -113,7 +113,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Luling City Market",
+    "name": "Luling City Market",
     "address": "Richmond Avenue, Houston, TX",
     "style": "bbq",
     "preference": 1,
@@ -127,7 +127,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Thai Gourmet",
+    "name": "Thai Gourmet",
     "address": "Richmond Avenue, Houston, TX",
     "style": "Thai",
     "preference": 1,
@@ -141,7 +141,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Pho one",
+    "name": "Pho one",
     "address": "Westheimer Road, Houston, TX",
     "style": "Asian",
     "preference": 1.25,
@@ -155,7 +155,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Suya hut",
+    "name": "Suya hut",
     "address": "West Airport Boulevard, Meadows Place, TX",
     "style": "Nigerian",
     "preference": 1,
@@ -169,7 +169,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Boheme Cafe and Wine Bar",
+    "name": "Boheme Cafe and Wine Bar",
     "address": "Fairview Street, Houston, TX",
     "style": "Bar",
     "preference": 1,
@@ -183,7 +183,7 @@
     "Bar": true
   },
   {
-    "restaurant": "La Gran Sorpresa",
+    "name": "La Gran Sorpresa",
     "address": "Richmond Avenue, Houston, TX",
     "style": "Colombian",
     "preference": 1,
@@ -197,7 +197,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Indian Grill",
+    "name": "Indian Grill",
     "address": "Greens Road, Houston, TX",
     "style": "Indian",
     "preference": 0.75,
@@ -211,7 +211,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Down House",
+    "name": "Down House",
     "address": "Yale Street, Houston, TX",
     "style": "American",
     "preference": 1,
@@ -225,7 +225,7 @@
     "Bar": true
   },
   {
-    "restaurant": "Hugo's",
+    "name": "Hugo's",
     "address": "Westheimer Road, Houston, TX",
     "style": "Mexican",
     "preference": 1,
@@ -239,7 +239,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Taj Indian Restaurant",
+    "name": "Taj Indian Restaurant",
     "address": "North Freeway, Houston, TX",
     "style": "Indian",
     "preference": 1.25,
@@ -253,7 +253,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Koto Japanese Restaurant",
+    "name": "Koto Japanese Restaurant",
     "address": "Westheimer Road, Houston, TX",
     "style": "Sushi",
     "preference": 1,
@@ -267,7 +267,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Café mezza & Grille",
+    "name": "Café mezza & Grille",
     "address": "Westheimer Road, Houston, TX",
     "style": "Mediteranian",
     "preference": 1,
@@ -281,7 +281,7 @@
     "Bar": false
   },
   {
-    "restaurant": "Happy Fatz",
+    "name": "Happy Fatz",
     "address": "White Oak Drive, Houston, TX",
     "style": "Hotdogs",
     "preference": 1,
@@ -295,7 +295,7 @@
     "Bar": false
   },
   {
-    "restaurant": "House of Bowls",
+    "name": "House of Bowls",
     "address": "Corporate Drive, Houston, TX",
     "style": "Asian",
     "preference": 1,
