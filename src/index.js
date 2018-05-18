@@ -14,6 +14,8 @@ var mapCanvas = document.getElementById('map-canvas');
 var map = new google.maps.Map(mapCanvas, mapOptions);
 
 var geocoder = new google.maps.Geocoder();
+var markers = [];
+var unvisitedRestaurants;
 
 function callback(results, status, restaurant) {
 
@@ -25,6 +27,8 @@ function callback(results, status, restaurant) {
             draggable: true,
             animation: google.maps.Animation.DROP
         });
+
+        markers.push(marker);
 
         var infoWindow = new google.maps.InfoWindow({
             content: restaurant.name
@@ -41,20 +45,24 @@ function callback(results, status, restaurant) {
 
 function getRestaurants() {
     return fetch('http://localhost:3000/restaurants')
-        .then(response => response.json());
-}
-
-function mapRestaurants() {
-    getRestaurants()
+        .then(response => response.json())
         .then((restaurants) => {
-            restaurants.forEach((restaurant) => {
-                geocoder.geocode({address : restaurant.address}, function (results, status) {
-                    console.log(restaurant);
-                    callback(results, status, restaurant);
-                })
-            })
+            unvisitedRestaurants = restaurants.filter(restaurant => restaurant.been === false);
+            console.log(unvisitedRestaurants);
         })
 }
+
+// function mapRestaurants() {
+//     getRestaurants()
+//         .then((restaurants) => {
+//             restaurants.forEach((restaurant) => {
+//                 geocoder.geocode({address : restaurant.address}, function (results, status) {
+//                     console.log(restaurant);
+//                     callback(results, status, restaurant);
+//                 })
+//             })
+//         })
+// }
 
 function mapRestaurant (restaurant) {
     geocoder.geocode({address: restaurant.address}, function (results, status) {
@@ -63,19 +71,41 @@ function mapRestaurant (restaurant) {
     });
 }
 
+function setMapOnAll(map){
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
+}
+function clearMarkers() {
+    setMapOnAll(null)
+}
+
 
 
 $('#pickRandomRestaurant').on('click', function pickRandomRestaurant() {
-
+    var pickedRestaurant;
+    clearMarkers();
     getRestaurants()
-        .then((restaurants) => {
-            let randomNumber = Math.floor((Math.random() * restaurants.length) + 1);
+        .then((unvisitedRestaurants) => {
+            let randomNumber = Math.floor((Math.random() * unvisitedRestaurants.length) + 1);
             console.log(randomNumber);
-            let pickedRestaurant = restaurants[randomNumber];
+            pickedRestaurant = unvisitedRestaurants[randomNumber];
             $('#restaurant-name').html(pickedRestaurant.name);
+            $('#select-button').html(
+                `<button id="select-restaurant" class="btn btn-primary">I want to eat here</button>`
+            );
+            $('#select-restaurant').on('click', function changeRestaurantStatus(){
+                if (pickedRestaurant.been === false) {
+                    pickedRestaurant.been = true;
+                }
+                console.log(pickedRestaurant.been);
+            });
             mapRestaurant(pickedRestaurant);
         });
+
 });
+
+
 
 
 
