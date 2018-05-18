@@ -63,6 +63,8 @@ function mapRestaurant (restaurant) {
     });
 }
 
+
+
 $('#pickRandomRestaurant').on('click', function pickRandomRestaurant() {
 
     getRestaurants()
@@ -70,9 +72,11 @@ $('#pickRandomRestaurant').on('click', function pickRandomRestaurant() {
             let randomNumber = Math.floor((Math.random() * restaurants.length) + 1);
             console.log(randomNumber);
             let pickedRestaurant = restaurants[randomNumber];
+            $('#restaurant-name').html(pickedRestaurant.name);
             mapRestaurant(pickedRestaurant);
-        })
+        });
 });
+
 
 
 
