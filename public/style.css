@@ -1,11 +1,37 @@
 body {
     height: 100%;
     text-align: center;
-}
+    background-image: url("../img/restaurant/restaurant.png");
+    font-family: 'Noto Sans', sans-serif;}
 
 #map-canvas {
-    padding: 0;
+    padding: 20px;
     margin: 0 auto;
     height: 500px;
     width: 800px;
+    border: solid 3px #2769D2;
+    padding-bottom: 100px;
+
 }
+
+
+
+h1  {
+    font-family: 'Permanent Marker', cursive;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+button {
+    margin: 20px;
+}
+
+.sweetTomatoes {
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    color: red;
+    font-size: 50px;
+}
+

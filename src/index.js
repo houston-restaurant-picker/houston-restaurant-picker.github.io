@@ -45,12 +45,13 @@ function callback(results, status, restaurant) {
 
 function getRestaurants() {
     return fetch('http://localhost:3000/restaurants')
-        .then(response => response.json())
-        .then((restaurants) => {
-            unvisitedRestaurants = restaurants.filter(restaurant => restaurant.been === false);
-            console.log(unvisitedRestaurants);
-        })
+        .then(response => response.json());
+    // .then((restaurants) => {
+        //     unvisitedRestaurants = restaurants.filter(restaurant => restaurant.been === false);
+        //     console.log(unvisitedRestaurants);
+        // })
 }
+
 
 // function mapRestaurants() {
 //     getRestaurants()
@@ -86,13 +87,16 @@ $('#pickRandomRestaurant').on('click', function pickRandomRestaurant() {
     var pickedRestaurant;
     clearMarkers();
     getRestaurants()
-        .then((unvisitedRestaurants) => {
-            let randomNumber = Math.floor((Math.random() * unvisitedRestaurants.length) + 1);
+        .then((restaurants) => {
+            let randomNumber = Math.floor((Math.random() * restaurants.length) + 1);
             console.log(randomNumber);
-            pickedRestaurant = unvisitedRestaurants[randomNumber];
-            $('#restaurant-name').html(pickedRestaurant.name);
+            pickedRestaurant = restaurants[randomNumber];
+            $('#restaurant-name').html("Sweet Tomatoes").addClass('sweetTomatoes');
+            setTimeout(function () {
+                $('#restaurant-name').html("Just kidding, it's: <br>" + pickedRestaurant.name).removeClass('sweetTomatoes');
+            } , 1200);
             $('#select-button').html(
-                `<button id="select-restaurant" class="btn btn-primary">I want to eat here</button>`
+                `<button id="select-restaurant" class="btn btn-success">I want to eat here</button>`
             );
             $('#select-restaurant').on('click', function changeRestaurantStatus(){
                 if (pickedRestaurant.been === false) {
@@ -104,6 +108,7 @@ $('#pickRandomRestaurant').on('click', function pickRandomRestaurant() {
         });
 
 });
+
 
 
 
